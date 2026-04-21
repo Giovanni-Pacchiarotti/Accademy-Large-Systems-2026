@@ -1,0 +1,137 @@
+Crea una tabella LIBRI con le colonne: id (intero), titolo (testo), autore (testo), genere 
+(testo), anno (intero), prezzo (decimale), disponibile (booleano o intero 0/1).
+
+-- Creazione tabella
+CREATE TABLE LIBRI (
+    id INT PRIMARY KEY,
+    titolo VARCHAR(255),
+    autore VARCHAR(255),
+    genere VARCHAR(100),
+    anno INT,
+    prezzo DECIMAL(5,2),
+    disponibile BOOLEAN
+);
+
+
+---------------------------------------------------------------------------------------------------------------------
+
+
+Inserisci almeno 10 libri con dati variati (generi diversi, anni tra 1990 e 2024, prezzi tra 8 e 
+35 euro, alcuni non disponibili). Sii creativo con i titoli!
+
+-- Inserimento dati
+INSERT INTO LIBRI (id, titolo, autore, genere, anno, prezzo, disponibile) VALUES
+(1, 'Il segreto delle stelle cadenti', 'Luca Bianchi', 'Fantascienza', 2005, 18.50, TRUE),
+(2, 'Ombre su Venezia', 'Giulia Rossi', 'Giallo', 2012, 14.90, TRUE),
+(3, 'La biblioteca dimenticata', 'Marco Verdi', 'Fantasy', 1998, 22.00, FALSE),
+(4, 'Cronache di un sogno perduto', 'Elena Neri', 'Drammatico', 2020, 19.99, TRUE),
+(5, 'Il codice del tempo', 'Andrea Gallo', 'Fantascienza', 2018, 25.50, FALSE),
+(6, 'Sotto il cielo di Tokyo', 'Chiara Fontana', 'Romantico', 2022, 16.80, TRUE),
+(7, 'I misteri della mente', 'Davide Ricci', 'Saggio', 2010, 30.00, TRUE),
+(8, 'La danza delle ombre', 'Sara Conti', 'Horror', 2001, 12.75, FALSE),
+(9, 'Viaggio ai confini del mondo', 'Paolo Greco', 'Avventura', 1995, 20.40, TRUE),
+(10, 'Algoritmi e destino', 'Francesca Blu', 'Tecnologico', 2024, 34.99, TRUE);
+
+
+---------------------------------------------------------------------------------------------------------------------
+
+
+Scrivi una query che recuperi TUTTI i libri, ordinati per prezzo in modo crescente.
+
+select * from libri order by prezzo asc;
+
+
+---------------------------------------------------------------------------------------------------------------------
+
+
+Scrivi una query che recuperi solo i libri disponibili (disponibile = 1) il cui prezzo è compreso
+tra 10 e 20 euro.
+
+select * from libri where disponibile = 1 and prezzo between 10 and 20;
+
+
+---------------------------------------------------------------------------------------------------------------------
+
+
+Scrivi una query che recuperi i libri il cui autore contiene la lettera 'a' (usa LIKE). Visualizza 
+solo il titolo e l'autore, con un alias leggibile per le colonne.
+
+select titolo as Titolo_Libro, autore as Autore_Libro from libri where autore like '%a%';
+
+
+---------------------------------------------------------------------------------------------------------------------
+
+
+Scrivi una query che recuperi i libri pubblicati tra il 2000 e il 2015, ordinati per anno 
+decrescente, mostrando solo i primi 5 risultati (usa LIMIT).
+
+select * from libri where anno between 2000 and 2015 order by anno desc limit 5;
+
+
+---------------------------------------------------------------------------------------------------------------------
+
+
+Scrivi una query che recuperi i libri del genere 'Fantasy' OPPURE del genere 
+'Fantascienza' usando l'operatore IN.
+
+select * from libri where genere in ('Fantasy', 'Fantascienza');
+
+
+---------------------------------------------------------------------------------------------------------------------
+
+
+Scrivi una query che conti il numero totale di libri presenti nella tabella.
+
+select count(*) from libri
+
+
+---------------------------------------------------------------------------------------------------------------------
+
+
+Scrivi una query che calcoli il prezzo medio, il prezzo massimo e il prezzo minimo di tutti i libri.
+
+select avg(prezzo), max(prezzo), min(prezzo) from libri
+
+
+---------------------------------------------------------------------------------------------------------------------
+
+
+Scrivi una query che mostri, per ogni genere, il numero di libri e il prezzo medio. Ordina per numero di libri in modo decrescente. (Usa GROUP BY.)
+
+select genere, count(*), avg(prezzo) from libri group by genere order by count(*) desc;
+
+
+---------------------------------------------------------------------------------------------------------------------
+
+
+Scrivi una query che usi GROUP BY e HAVING per mostrare solo i generi che hanno più di 2 libri.
+
+select genere, count(*) from libri group by genere having count(*) >= 2;
+
+
+---------------------------------------------------------------------------------------------------------------------
+
+
+Scrivi una query che mostri il titolo di ogni libro tutto in maiuscolo (usa una funzione di  testo) e la lunghezza del titolo in caratteri.
+
+select upper(titolo), length(titolo) from libri;
+
+
+---------------------------------------------------------------------------------------------------------------------
+
+
+Scrivi una query che calcoli, per ogni libro, il prezzo con IVA al 22% (prezzo * 1.22)  arrotondato a due decimali. Mostra titolo, prezzo originale e prezzo con IVA.
+
+select titolo, prezzo, round(prezzo * 1.22, 2) from libri;
+
+---------------------------------------------------------------------------------------------------------------------
+
+
+BONUS: Scrivi una query che usi una funzione di data per visualizzare l'anno corrente e calcoli quanti anni fa è stato pubblicato ogni libro.
+
+select year(curdate()), year(curdate()) - anno from libri;
+
+
+
+Consegna: Nella tabella ci sono 10 libri.
+
