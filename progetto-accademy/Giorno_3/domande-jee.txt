@@ -1,0 +1,49 @@
+Cos'è un Web Container? Qual è il suo ruolo in un'applicazione JEE? Fai un esempio di Web Container che conosci.
+
+
+Un Web Container è una parte del server che si occupa di far funzionare le applicazioni web Java. Gestisce le richieste che arrivano dal browser e si occupa di eseguire le Servlet. Nel mondo JEE il suo ruolo è quindi quello di “far girare” le applicazioni web e gestire tutto ciò che riguarda le richieste degli utenti. Un esempio di Web Container è Apache Tomcat.
+
+
+-------------------------------------------------------------------------------------------------
+
+
+Qual è la differenza tra un sito web statico e un'applicazione web dinamica? Fai un esempio concreto di ciascuno.
+
+
+Un sito web statico è un sito formato da pagine fisse che non cambiano in base all’utente e mostrano sempre le stesse informazioni. Un’applicazione web dinamica invece cambia contenuto in base all’utente o ai dati presenti nel database. Un esempio di sito statico può essere una semplice pagina personale, mentre un esempio di applicazione dinamica è un sito come Amazon.
+
+
+-------------------------------------------------------------------------------------------------
+
+
+Cos'è un file WAR? Cosa contiene e perché è importante nel deploy di un'applicazione Java web?
+
+
+Un file WAR è un file compresso che contiene una applicazione web Java pronta per essere installata su un server. Dentro ci sono i file del sito, le classi Java e le configurazioni. Serve per poter trasferire e pubblicare facilmente l’applicazione su un server come Tomcat.
+
+
+-------------------------------------------------------------------------------------------------
+
+
+Cos'è il protocollo HTTP? Descrivi brevemente cosa succede quando un browser fa una richiesta a un server web (ciclo request-response).
+
+
+HTTP è il protocollo che permette la comunicazione tra browser e server. Quando si apre un sito, il browser manda una richiesta al server, il server la elabora e risponde con una pagina o dei dati, che poi vengono mostrati sul browser.
+
+
+-------------------------------------------------------------------------------------------------
+
+
+A cosa serve il file web.xml in un'applicazione JEE? Fai almeno un esempio di configurazione che può contenere.
+
+
+Il file web.xml è un file di configurazione delle applicazioni Java web. Serve per dire al server come devono funzionare le servlet e quali URL devono essere collegati a esse. Per esempio, si può dire che una servlet risponde quando si visita una certa pagina.
+
+
+-------------------------------------------------------------------------------------------------
+
+
+In base a quanto studiato, qual è la differenza tra JEE e Jakarta EE? Perché è avvenuto questo cambiamento di nome?
+
+
+JEE e Jakarta EE sono praticamente la stessa cosa. JEE era la versione originale di Java per le applicazioni aziendali, mentre Jakarta EE è la versione aggiornata. Il nome è cambiato perché il progetto è passato da Oracle alla Eclipse Foundation, quindi non poteva più chiamarsi Java EE.
