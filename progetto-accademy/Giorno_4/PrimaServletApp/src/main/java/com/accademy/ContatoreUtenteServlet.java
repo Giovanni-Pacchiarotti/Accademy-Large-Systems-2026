@@ -1,0 +1,57 @@
+package com.accademy;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+/**
+ * Servlet implementation class ContatoreUtenteServlet
+ */
+@WebServlet("/utente")
+public class ContatoreUtenteServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public ContatoreUtenteServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
+	{
+		HttpSession session = request.getSession();
+
+        Integer contatore = (Integer) session.getAttribute("contatoreUtente");
+
+        if (contatore == null)
+            contatore = 0;
+        
+        contatore++;
+
+        session.setAttribute("contatoreUtente", contatore);
+
+        response.setContentType("text/html");
+
+        response.getWriter().println(
+            "Hai visitato questa pagina " + contatore + " volte."
+        );
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}
