@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details - User Directory</title>
+</head>
+<body>
+    <header>
+        <h1>User Detail</h1>
+    </header>
+
+    <main>
+        <section id="user-info">
+            <p><strong>Name:</strong> <span id="user-name"></span></p>
+            <p><strong>Email:</strong> <span id="user-email"></span></p>
+            <p><strong>Phone:</strong> <span id="user-phone"></span></p>
+            <p><strong>Company:</strong> <span id="user-company"></span></p>
+        </section>
+
+        <nav>
+            <a href="index.html">Back to Directory</a>
+        </nav>
+    </main>
+
+    <script>
+        // Dati placeholder degli utenti
+        const users = 
+        {
+            "mario_rossi": 
+            {
+                name: "Mario Rossi",
+                email: "mario.rossi@example.com",
+                phone: "+39 012 345 6789",
+                company: "Tech Solutions S.r.l."
+            },
+            "luigi_bianchi": 
+            {
+                name: "Luigi Bianchi",
+                email: "luigi.bianchi@example.com",
+                phone: "+39 987 654 3210",
+                company: "Innovate Co."
+            },
+            "giovanna_verdi": 
+            {
+                name: "Giovanna Verdi",
+                email: "giovanna.verdi@example.com",
+                phone: "+39 555 123 4567",
+                company: "Creative Minds Ltd."
+            }
+        };
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const userId = urlParams.get('user');
+        const user = users[userId];
+
+        if(user) 
+        {
+            document.getElementById('user-name').textContent = user.name;
+            document.getElementById('user-email').textContent = user.email;
+            document.getElementById('user-phone').textContent = user.phone;
+            document.getElementById('user-company').textContent = user.company;
+        } 
+        else 
+            document.getElementById('user-info').innerHTML = "<p>Utente non trovato o ID utente mancante.</p>";
+        
+    </script>
+</body>
+</html>
