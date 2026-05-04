@@ -1,0 +1,94 @@
+/* RESET BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f4f4;
+}
+
+/* HEADER */
+header {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/* SEARCH */
+#search-section {
+  padding: 20px;
+  text-align: center;
+}
+
+#user-search {
+  padding: 10px;
+  width: 250px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* USER LIST CONTAINER */
+#user-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* CARD */
+#user-list li {
+  background-color: white;
+  padding: 15px;
+  width: 220px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+/* HOVER */
+#user-list li:hover {
+  transform: scale(1.05);
+}
+
+/* LINK */
+#user-list a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+/* DETAILS PAGE */
+#user-info {
+  background: white;
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+#user-info p {
+  margin-bottom: 10px;
+}
+
+/* BACK LINK */
+nav {
+  text-align: center;
+  margin-top: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  background-color: #333;
+  padding: 10px 15px;
+  border-radius: 8px;
+}
