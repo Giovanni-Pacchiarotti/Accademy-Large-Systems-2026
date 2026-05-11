@@ -1,0 +1,159 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f2f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+}
+
+#searchInput {
+    width: calc(100% - 20px);
+    padding: 12px 15px;
+    margin-bottom: 30px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 1.1em;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+#searchInput:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.user-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.user-card {
+    background-color: #e9f7ff;
+    border: 1px solid #b3e0ff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.user-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.user-card h3 {
+    margin-top: 0;
+    color: #0056b3;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.user-card p {
+    margin: 5px 0;
+    font-size: 0.95em;
+}
+
+.user-card strong {
+    color: #004085;
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Nascosto di default */
+    position: fixed; /* Si mantiene in posizione */
+    z-index: 1000; /* Sopra tutto il resto */
+    left: 0;
+    top: 0;
+    width: 100%; /* Larghezza completa */
+    height: 100%; /* Altezza completa */
+    overflow: auto; /* Abilita lo scroll se necessario */
+    background-color: rgba(0,0,0,0.5); /* Sfondo semi-trasparente */
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Padding per evitare che la modale tocchi i bordi */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    padding: 30px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    position: relative;
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 32px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #333;
+    text-decoration: none;
+}
+
+#modalUserDetails h2 {
+    color: #007bff;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 2em;
+    text-align: center;
+}
+
+#modalUserDetails p {
+    margin-bottom: 12px;
+    font-size: 1.05em;
+}
+
+#modalUserDetails strong {
+    color: #0056b3;
+    min-width: 100px; /* Per allineare meglio le etichette */
+    display: inline-block;
+}
+
+#modalUserDetails a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+#modalUserDetails a:hover {
+    text-decoration: underline;
+}
